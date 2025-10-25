@@ -9,9 +9,6 @@ import TransitionLink from "./transition-link";
 
 const Nav = () => {
   const { isAtTop } = useIsScrollAtTop();
-  const handleOnClick = () => {
-    // do something.  sign in modal
-  };
 
   return (
     <motion.nav
