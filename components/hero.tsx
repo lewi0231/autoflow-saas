@@ -12,7 +12,7 @@ function Hero() {
   const scale = useTransform(scrollYProgress, [0, 0.2], [1, 0.8]);
 
   return (
-    <section className=" h-screen w-full flex flex-col items-center ">
+    <section className="h-screen w-full flex flex-col items-center bg-linear-to-b from-background via-background to-secondary/20">
       <motion.div
         style={{ opacity, scale }}
         className="flex-1 flex flex-col justify-center items-center"

@@ -38,6 +38,8 @@ function CustomButton({
       whileTap={{ scale: 0.95 }}
       className={cn(
         "rounded-md font-semibold flex items-center gap-2 transition-colors tracking-wide cursor-pointer",
+        "focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2",
+        "focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2",
         SIZES[size],
         VARIANTS[variant]
       )}

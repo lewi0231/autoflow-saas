@@ -39,7 +39,7 @@ const TestimonialSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="h-[300vh] w-5/6 flex flex-col justify-between"
+      className="h-[300vh] w-5/6 flex flex-col justify-between bg-linear-to-b from-background via-secondary/10 to-secondary/20"
     >
       <div className="sticky top-0 flex h-screen items-center overflow-hidden">
         <div className="absolute top-32 left-1/2 -translate-x-1/2 w-full z-10">
@@ -59,7 +59,7 @@ const TestimonialSection = () => {
                 transition={{ delay: index * 0.1 }}
                 className="shrink-0 w-[400px] "
               >
-                <Card className="bg-secondary/30">
+                <Card className="bg-background/80 backdrop-blur-sm border-2 shadow-lg hover:shadow-xl transition-shadow duration-300">
                   <CardHeader>
                     <div className="flex items-center gap-4 mb-2">
                       <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center font-semibold text-primary">
