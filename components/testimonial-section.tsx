@@ -27,7 +27,10 @@ const TestimonialSection = () => {
   );
 
   return (
-    <section ref={sectionRef} className="h-[300vh] w-5/6 py-20 bg-secondary/40">
+    <section
+      ref={sectionRef}
+      className="h-[300vh] w-5/6 flex flex-col justify-between"
+    >
       <div className="sticky top-0 flex h-screen items-center overflow-hidden">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -51,9 +54,9 @@ const TestimonialSection = () => {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="shrink-0 w-[400px]"
+                className="shrink-0 w-[400px] "
               >
-                <Card className="">
+                <Card className="bg-secondary/30">
                   <CardHeader>
                     <div className="flex items-center gap-4 mb-2">
                       <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center font-semibold text-primary">

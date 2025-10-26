@@ -1,3 +1,5 @@
+import { IconName } from "./icon";
+
 export const pricing = [
   {
     name: "starter",
@@ -141,6 +143,54 @@ export const testimonials = [
       "cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     avatar: "RB",
   },
-];
+] as const;
 
 export type Testimonial = (typeof testimonials)[number];
+
+export const features = [
+  {
+    icon: "Workflow",
+    title: "Smart Workflows",
+    description:
+      "Build complex automation workflows with our intuitive drag-and-drop builder",
+  },
+  {
+    icon: "Zap",
+    title: "Instant Execution",
+    description:
+      "Trigger automations in real-time with lightning-fast processing",
+  },
+  {
+    icon: "GitCommit",
+    title: "Multi-Step Logic",
+    description:
+      "Create sophisticated branching logic and conditional workflows",
+  },
+  {
+    icon: "Database",
+    title: "Data Integration",
+    description: "Connect to 1000+ apps and services seamlessly",
+  },
+  {
+    icon: "Clock",
+    title: "Schedule & Trigger",
+    description: "Set up time-based or event-driven automation triggers",
+  },
+  {
+    icon: "BarChart",
+    title: "Analytics Dashboard",
+    description: "Monitor your automation performance with detailed insights",
+  },
+  {
+    icon: "Mail",
+    title: "Intelligent Email Management",
+    description: "Auto-categorize, prioritize and draft responses to emails",
+  },
+  {
+    icon: "Calendar",
+    title: "Smart Scheduling",
+    description: "Optimize meeting times and send invites automatically",
+  },
+] satisfies { icon: IconName; title: string; description: string }[];
+
+export type Feature = (typeof features)[number];

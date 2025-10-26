@@ -14,7 +14,7 @@ function PricingSection() {
   };
 
   return (
-    <section className="bg-secondary/40 h-screen w-full py-20">
+    <section className="bg-secondary/30 h-screen w-full flex flex-col justify-center py-20">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
