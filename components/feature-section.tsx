@@ -4,6 +4,7 @@ import { features } from "@/lib/data";
 import Icon from "@/lib/icon";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import SectionHeader from "./section-header";
 import {
   Card,
   CardContent,
@@ -11,6 +12,12 @@ import {
   CardHeader,
   CardTitle,
 } from "./ui/card";
+
+/**
+ * Feature Section with animated shuffling cards
+ * - Cards shuffle every 3 seconds for dynamic presentation
+ * - Uses layout animations from framer-motion
+ */
 
 const shuffle = () => {
   return features.toSorted(() => Math.random() - 0.5);
@@ -61,20 +68,10 @@ const FeatureShuffle = () => {
 const FeatureSection = () => {
   return (
     <section className="bg-secondary/60 h-screen flex flex-col justify-center w-full">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="text-center mb-16"
-      >
-        <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">
-          Powerful Automation Features
-        </h2>
-        <p className="text-muted-foreground text-lg">
-          Everything you need to build, deploy, and manage intelligent
-          automations.
-        </p>
-      </motion.div>
+      <SectionHeader
+        title="Powerful Automation Features"
+        subtitle="Everything you need to build, deploy, and manage intelligent automations."
+      />
       <FeatureShuffle />
     </section>
   );

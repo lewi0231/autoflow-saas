@@ -4,7 +4,14 @@ import { pricing, PricingOption, type Pricing } from "@/lib/data";
 import { motion } from "framer-motion";
 import { Check, X } from "lucide-react";
 import { useState } from "react";
+import SectionHeader from "./section-header";
 
+/**
+ * Pricing Section with interactive card selection
+ * - Features animated card selection with spring animations
+ * - Shows "Most Popular" badge on selected plan
+ * - Uses state to manage selected pricing tier
+ */
 function PricingSection() {
   const [selectedPricing, setSelectedPricing] =
     useState<PricingOption>("professional");
@@ -15,19 +22,10 @@ function PricingSection() {
 
   return (
     <section className="bg-secondary/30 h-screen w-full flex flex-col justify-center py-20">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="text-center mb-16"
-      >
-        <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">
-          Choose Your Plan
-        </h2>
-        <p className="text-muted-foreground text-lg">
-          Scale your automation as you grow
-        </p>
-      </motion.div>
+      <SectionHeader
+        title="Choose Your Plan"
+        subtitle="Scale your automation as you grow"
+      />
       <div className="flex justify-center items-center gap-6">
         {pricing.map((plan, index) => (
           <PricingCard
@@ -113,7 +111,7 @@ const PricingCard = ({
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         transition={{ duration: 1 }}
-        className={`w-full py-3 rounded-md font-semibold transition-colors duration-500 ${
+        className={`w-full py-3 px-4 rounded-md font-semibold transition-colors duration-500 ${
           isSelected
             ? "bg-primary text-primary-foreground hover:bg-primary/90"
             : "bg-secondary text-secondary-foreground hover:bg-secondary/80 border"

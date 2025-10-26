@@ -9,30 +9,37 @@ const SIZES = {
   lg: "px-6 py-3",
   md: "px-4 py-2",
   sm: "px-2 py-1",
-};
+} as const;
 
-const VARIANT = {
-  secondary: "bg-secondary text-foreground hover:bg-secondary/90",
-  primary: "bg-primary hover:bg-primary/90 ",
-};
+const VARIANTS = {
+  primary: "bg-primary text-primary-foreground hover:bg-primary/90",
+  secondary:
+    "bg-secondary text-secondary-foreground hover:bg-secondary/80 border",
+} as const;
 
+interface CustomButtonProps {
+  children: React.ReactNode;
+  size?: keyof typeof SIZES;
+  variant?: keyof typeof VARIANTS;
+}
+
+/**
+ * Reusable button component with consistent sizing and variants
+ * Used throughout the application for CTA buttons
+ */
 function CustomButton({
   children,
   size = "sm",
   variant = "primary",
-}: {
-  children: React.ReactNode;
-  size?: keyof typeof SIZES;
-  variant?: "secondary" | "primary";
-}) {
+}: CustomButtonProps) {
   return (
     <motion.button
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
       className={cn(
-        " bg-primary text-primary-foreground rounded-md font-semibold flex items-center gap-2 transition-colors tracking-wide cursor-pointer",
+        "rounded-md font-semibold flex items-center gap-2 transition-colors tracking-wide cursor-pointer",
         SIZES[size],
-        VARIANT[variant]
+        VARIANTS[variant]
       )}
     >
       {children}
