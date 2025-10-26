@@ -21,7 +21,10 @@ function PricingSection() {
   };
 
   return (
-    <section className="h-screen w-full flex flex-col justify-center py-20 bg-linear-to-b from-secondary/20 via-background to-secondary/30 border-t border-border/50 relative">
+    <section
+      id="pricing"
+      className="h-screen w-full flex flex-col justify-center py-16 bg-linear-to-b from-secondary/20 via-background to-secondary/30 border-t border-border/50 relative"
+    >
       {/* Decorative gradient accents */}
       <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-border to-transparent"></div>
       <div className="relative z-10">

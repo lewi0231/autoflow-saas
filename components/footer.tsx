@@ -9,24 +9,24 @@ const Footer = () => {
   return (
     <section className="bg-foreground text-background">
       <motion.div className="w-5/6 mx-auto flex">
-        <div className="flex flex-col justify-center text-start col-span-2 w-2/5 gap-2 py-10 pr-8">
+        <div className="flex flex-col justify-center text-start col-span-2 w-2/5 gap-4 py-16 pr-8">
           <Logo />
           <div className="text-left">
             Connect your apps, automate workflows and let AI handle the
             repetitive tasks. Focus on what matters while Autoflow does the
             rest.
           </div>
-          <div className="flex justify-start gap-6 pt-2">
+          <div className="flex justify-start gap-6 pt-4">
             <FaFacebookF />
             <FaInstagramSquare />
             <FaLinkedinIn />
             <FiMail />
           </div>
         </div>
-        <div className="w-3/5 flex justify-between items-start py-10">
-          <div className="flex flex-col items-start gap-2">
+        <div className="w-3/5 flex justify-between items-start py-16 gap-8">
+          <div className="flex flex-col items-start gap-4">
             <h3 className="font-bold text-lg">Product</h3>
-            <ul className="flex flex-col items-start gap-2">
+            <ul className="flex flex-col items-start gap-3">
               <li>Features</li>
               <li>Pricing</li>
               <li>Integrations</li>
@@ -34,20 +34,19 @@ const Footer = () => {
               <li>Changelog</li>
             </ul>
           </div>
-          <div className="flex flex-col items-start gap-2">
+          <div className="flex flex-col items-start gap-4">
             <h3 className="font-bold text-lg">Company</h3>
-            <ul className="flex flex-col items-start gap-2">
+            <ul className="flex flex-col items-start gap-3">
               <li>About Us</li>
               <li>Careers</li>
               <li>Blog</li>
-
               <li>Changelog</li>
               <li>Contact</li>
             </ul>
           </div>
-          <div className="flex flex-col items-end gap-2">
+          <div className="flex flex-col items-start gap-4">
             <h3 className="font-bold text-lg">Legal</h3>
-            <ul className="flex flex-col items-end gap-2">
+            <ul className="flex flex-col items-start gap-3">
               <li>Privacy Policy</li>
               <li>Terms of Service</li>
               <li>Cookie Policy</li>

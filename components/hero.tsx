@@ -12,22 +12,16 @@ function Hero() {
   const scale = useTransform(scrollYProgress, [0, 0.2], [1, 0.8]);
 
   return (
-    <section className="h-screen w-full flex flex-col items-center bg-linear-to-b from-background via-background to-secondary/20">
+    <section className="h-screen w-full flex flex-col items-center bg-linear-to-b from-background via-background to-secondary/20 pt-28">
       <motion.div
         style={{ opacity, scale }}
         className="flex-1 flex flex-col justify-center items-center"
       >
-        {/* <div className="w-full flex justify-center pb-8">
-          <span className="border-muted-foreground bg-secondary mx-auto py-2 px-4 rounded-full shadow font-medium flex gap-2 items-center text-sm">
-            <RxLightningBolt />
-            AI-Powered Automation Platform
-          </span>
-        </div> */}
         <motion.h1
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.1 }}
-          className="text-7xl font-extrabold tracking-tight"
+          className="text-5xl md:text-7xl font-extrabold tracking-tight"
         >
           <span className="block text-center">Automate Everything,</span>
           <span className="block text-center">Accomplish More</span>
@@ -37,7 +31,7 @@ function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
-          className="w-7/12 mx-auto text-[1.40rem] text-muted-foreground text-center py-4 tracking-wide "
+          className="w-10/12 md:w-7/12 mx-auto text-base md:text-xl text-muted-foreground text-center py-6 tracking-wide"
         >
           Connect your apps, automate workflows and let AI handle the repetitive
           tasks. Focus on what matters while Autoflow does the rest.
@@ -47,7 +41,7 @@ function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
-          className="flex justify-center items-center gap-4 pt-6"
+          className="flex justify-center items-center gap-4 pt-8"
         >
           <FloatingElement duration={6} intensity={1}>
             <CustomButton size="lg">
@@ -60,18 +54,28 @@ function Hero() {
             </CustomButton>
           </FloatingElement>
         </motion.div>
+
+        {/* Decorative connector line */}
+        <motion.div
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{ delay: 0.9, duration: 1 }}
+          className="w-24 h-px bg-linear-to-r from-transparent via-primary/30 to-transparent mt-16 mb-12"
+        />
+
+        {/* Stats Section */}
       </motion.div>
       <motion.div
         style={{ opacity, scale }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 2 }}
-        className="flex justify-between items-center w-3/4 px-8 mb-4"
+        transition={{ duration: 2, delay: 1 }}
+        className="flex justify-between items-center w-3/4 px-8 mb-4 text-foreground/60"
       >
         <div className="font-bold text-3xl flex flex-col justify-center items-center">
-          <div className="flex justify-center items-center">
+          <div className="flex justify-center items-center ">
             <CountAnimation value={50} duration={7} />
-            K+
+            <span className="h-full">K+</span>
           </div>
           <span className="font-normal text-muted-foreground capitalize text-sm">
             Active Users
@@ -85,7 +89,7 @@ function Hero() {
             Integrations
           </span>
         </div>
-        <div className="font-bold text-3xl flex flex-col justify-center items-center">
+        <div className="font-bold text-3xl flex flex-col justify-center items-center ">
           <div className="flex justify-center items-center">
             <CountAnimation
               value={99.9}
@@ -100,7 +104,7 @@ function Hero() {
           </span>
         </div>
         <div className="font-bold text-3xl flex flex-col justify-center items-center">
-          <div className="flex justify-center items-center">
+          <div className="flex justify-center items-center ">
             <CountAnimation value={10} duration={5} />
             M+
           </div>

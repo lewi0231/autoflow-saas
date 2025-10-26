@@ -15,7 +15,7 @@ interface SectionHeaderProps {
 export default function SectionHeader({
   title,
   subtitle,
-  className = "text-center mb-16",
+  className = "text-center mb-12",
 }: SectionHeaderProps) {
   return (
     <motion.div

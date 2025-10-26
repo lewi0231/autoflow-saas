@@ -33,13 +33,14 @@ const TestimonialSection = () => {
   const x = useTransform(
     scrollYProgress,
     [0, 1],
-    [0, -((400 + 24) * (testimonialsForScroll.length - 1)) + 400]
+    [0, -((400 + 24) * (testimonialsForScroll.length - 1))]
   );
 
   return (
     <section
+      id="testimonials"
       ref={sectionRef}
-      className="h-[300vh] w-5/6 flex flex-col justify-between bg-linear-to-b from-background via-secondary/10 to-secondary/20"
+      className="h-[200vh] w-5/6 flex flex-col justify-between bg-linear-to-b from-background via-secondary/10 to-secondary/20"
     >
       <div className="sticky top-0 flex h-screen items-center overflow-hidden">
         <div className="absolute top-32 left-1/2 -translate-x-1/2 w-full z-10">

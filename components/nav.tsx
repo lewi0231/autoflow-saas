@@ -25,9 +25,9 @@ const Nav = () => {
       >
         <Logo />
         <div className="flex gap-6 items-center font-semibold">
-          <TransitionLink href="/about">Features</TransitionLink>
-          <TransitionLink href="/about">pricing</TransitionLink>
-          <TransitionLink href="/about">Testimonials</TransitionLink>
+          <TransitionLink href="#features">Features</TransitionLink>
+          <TransitionLink href="#pricing">Pricing</TransitionLink>
+          <TransitionLink href="#testimonials">Testimonials</TransitionLink>
         </div>
         <div>
           <CustomButton size="md">Sign In</CustomButton>

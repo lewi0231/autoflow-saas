@@ -28,7 +28,11 @@ const CountAnimation = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return <motion.pre {...props}>{rounded}</motion.pre>;
+  return (
+    <motion.span className=" h-full" {...props}>
+      {rounded}
+    </motion.span>
+  );
 };
 
 export default CountAnimation;
