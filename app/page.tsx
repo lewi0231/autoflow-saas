@@ -1,7 +1,22 @@
-import FeatureSection from "@/components/feature-section";
 import Hero from "@/components/hero";
-import PricingSection from "@/components/pricing-section";
-import TestimonialSection from "@/components/testimonial-section";
+import dynamic from "next/dynamic";
+
+// Dynamically load below-the-fold sections to reduce initial bundle size
+// and avoid long main-thread tasks
+const FeatureSection = dynamic(() => import("@/components/feature-section"), {
+  ssr: true,
+});
+
+const TestimonialSection = dynamic(
+  () => import("@/components/testimonial-section"),
+  {
+    ssr: true,
+  }
+);
+
+const PricingSection = dynamic(() => import("@/components/pricing-section"), {
+  ssr: true,
+});
 
 export default function Home() {
   return (

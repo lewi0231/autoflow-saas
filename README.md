@@ -1,6 +1,6 @@
 # AutoFlow - Modern SaaS Landing Page
 
-A high-performance, visually engaging landing page showcasing modern web development techniques and attention to user experience.
+A high-performance, visually engaging landing page showcasing modern web development techniques and attention to user experience. Features optimized code splitting with dynamic imports to minimize initial bundle size and reduce main-thread blocking.
 
 ## Technology Stack
 
@@ -134,10 +134,21 @@ const VARIANTS = {
 
 **Performance Optimizations**
 
+- **Code Splitting & Dynamic Imports**: Below-the-fold sections (FeatureSection, TestimonialSection, PricingSection) are dynamically loaded using Next.js `dynamic()` to reduce initial bundle size and avoid long main-thread tasks
 - Cleans up timeouts to prevent memory leaks
 - Conditional rendering based on viewport visibility
 - Efficient re-render prevention with proper dependencies
 - Layout animations over property animations
+
+**Dynamic Loading Implementation**
+
+```typescript
+const FeatureSection = dynamic(() => import("@/components/feature-section"), {
+  ssr: true,
+});
+```
+
+**Why it matters**: By code-splitting heavy animation components (which use Framer Motion), the initial JavaScript bundle is significantly smaller. This improves Time to Interactive (TTI) and reduces Lighthouse's "long main-thread tasks" warnings, while maintaining SEO benefits through server-side rendering.
 
 ### Visual Polish
 
