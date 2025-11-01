@@ -1,6 +1,6 @@
 # AutoFlow - Modern SaaS Landing Page
 
-A high-performance, visually engaging landing page showcasing modern web development techniques and attention to user experience. Features optimized code splitting with dynamic imports to minimize initial bundle size and reduce main-thread blocking.
+A high-performance, visually engaging landing page showcasing modern web development techniques and attention to user experience. Features optimized code splitting with dynamic imports to minimize initial bundle size and reduce main-thread blocking. Fully responsive design ensures optimal viewing across all devices, from mobile to desktop.
 
 ## Technology Stack
 
@@ -99,6 +99,37 @@ className = "text-5xl md:text-7xl font-extrabold tracking-tight";
 - Maintains readability across viewport sizes
 - Proper line-height and tracking adjustments
 
+### Responsive Design
+
+**Mobile-First Layout Strategy**
+
+The site implements a comprehensive mobile-first responsive design approach using Tailwind CSS's utility classes. Each section adapts seamlessly across device sizes.
+
+**Flex-Based Grid Layouts**
+
+- **Feature Section**: Cards adjust from 1 column (mobile) → 2 columns (sm) → 3 columns (md) → 4 columns (lg) using `flex-basis` calculations
+- **Pricing Section**: Plans stack vertically on mobile and display horizontally on desktop with `flex-wrap` and responsive basis values
+- Formula used: `calc(100%/n - gap)` where `n` is the number of columns
+
+**Implementation**
+
+```typescript
+// Feature cards with responsive basis
+className =
+  "w-full sm:basis-[calc(50%-0.9rem)] md:basis-[calc(33.333%-0.60rem)] lg:basis-[calc(25%-0.375rem)]";
+
+// Pricing cards with predefined basis values
+className = "w-full basis-xs lg:basis-sm";
+```
+
+**Responsive Navigation**
+
+- Desktop: Full navigation links with Sign In button
+- Mobile: Hamburger menu with slide-in drawer
+- Fixed navbar with backdrop blur adapts height based on scroll position
+
+**Why it matters**: Provides optimal viewing experience across all devices while maintaining consistent design language and performance.
+
 ### Accessibility Features
 
 **Focus Management**
@@ -139,6 +170,7 @@ const VARIANTS = {
 - Conditional rendering based on viewport visibility
 - Efficient re-render prevention with proper dependencies
 - Layout animations over property animations
+- **Responsive Height Management**: Uses `min-h-screen` on mobile and `h-screen` on desktop for optimal section spacing without overflow
 
 **Dynamic Loading Implementation**
 

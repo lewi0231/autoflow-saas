@@ -8,8 +8,8 @@ import Logo from "./logo";
 const Footer = () => {
   return (
     <section className="bg-foreground text-background">
-      <motion.div className="w-5/6 mx-auto flex">
-        <div className="flex flex-col justify-center text-start col-span-2 w-2/5 gap-4 py-16 pr-8">
+      <motion.div className="w-5/6 mx-auto flex flex-col sm:flex-row justify-center">
+        <div className="flex flex-col justify-center text-start w-full gap-4 py-16 pr-8 sm:w-2/5">
           <Logo />
           <div className="text-left">
             Connect your apps, automate workflows and let AI handle the
@@ -23,7 +23,7 @@ const Footer = () => {
             <FiMail />
           </div>
         </div>
-        <div className="w-3/5 flex justify-between items-start py-16 gap-8">
+        <div className="sm:w-3/5 flex justify-between items-start py-16 gap-8 w-full">
           <div className="flex flex-col items-start gap-4">
             <h3 className="font-bold text-lg">Product</h3>
             <ul className="flex flex-col items-start gap-3">

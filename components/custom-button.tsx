@@ -21,6 +21,7 @@ interface CustomButtonProps {
   children: React.ReactNode;
   size?: keyof typeof SIZES;
   variant?: keyof typeof VARIANTS;
+  className?: string;
 }
 
 /**
@@ -31,6 +32,7 @@ function CustomButton({
   children,
   size = "sm",
   variant = "primary",
+  className,
 }: CustomButtonProps) {
   return (
     <motion.button
@@ -40,6 +42,7 @@ function CustomButton({
         "rounded-md font-semibold flex items-center gap-2 transition-colors tracking-wide cursor-pointer",
         "focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2",
         "focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2",
+        className,
         SIZES[size],
         VARIANTS[variant]
       )}

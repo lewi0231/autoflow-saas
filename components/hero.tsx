@@ -21,7 +21,7 @@ function Hero() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.1 }}
-          className="text-5xl md:text-7xl font-extrabold tracking-tight"
+          className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight transition-all duration-500"
         >
           <span className="block text-center">Automate Everything,</span>
           <span className="block text-center">Accomplish More</span>
@@ -31,7 +31,7 @@ function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
-          className="w-10/12 md:w-7/12 mx-auto text-base md:text-xl text-muted-foreground text-center py-6 tracking-wide"
+          className="w-10/12 md:w-7/12 mx-auto text-base md:text-xl text-muted-foreground text-center py-6 tracking-wide transition-all duration-300"
         >
           Connect your apps, automate workflows and let AI handle the repetitive
           tasks. Focus on what matters while Autoflow does the rest.
@@ -44,12 +44,16 @@ function Hero() {
           className="flex justify-center items-center gap-4 pt-8"
         >
           <FloatingElement duration={6} intensity={1}>
-            <CustomButton size="lg">
+            <CustomButton size={"lg"} className="text-xs md:text-sm">
               Start Free Trial <ArrowRight />
             </CustomButton>
           </FloatingElement>
           <FloatingElement duration={3} intensity={2}>
-            <CustomButton size="lg" variant="secondary">
+            <CustomButton
+              size="lg"
+              variant="secondary"
+              className="text-xs md:text-sm"
+            >
               Watch Demo <ArrowRight />
             </CustomButton>
           </FloatingElement>
@@ -70,7 +74,7 @@ function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 2, delay: 1 }}
-        className="flex justify-between items-center w-3/4 px-8 mb-4 text-foreground/60"
+        className="hidden md:flex justify-between items-center w-3/4 px-8 mb-4 text-foreground/60"
       >
         <div className="font-bold text-3xl flex flex-col justify-center items-center">
           <div className="flex justify-center items-center ">

@@ -24,10 +24,12 @@ export default function SectionHeader({
       viewport={{ once: true }}
       className={className}
     >
-      <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">
+      <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight px-2">
         {title}
       </h2>
-      {subtitle && <p className="text-muted-foreground text-lg">{subtitle}</p>}
+      {subtitle && (
+        <p className="text-muted-foreground text-lg px-2">{subtitle}</p>
+      )}
     </motion.div>
   );
 }

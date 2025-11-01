@@ -45,7 +45,7 @@ const FeatureShuffle = () => {
   return (
     <motion.ul
       ref={ref}
-      className="list-none w-[840px] flex justify-center items-center flex-wrap gap-3 mx-auto"
+      className="list-none md:w-5/6 flex justify-center items-center flex-wrap gap-2 mx-auto"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 2 }}
@@ -55,10 +55,10 @@ const FeatureShuffle = () => {
           key={feature.title}
           layout
           transition={{ type: "spring", damping: 20, stiffness: 300 }}
-          className="w-[200px] h-[220px]"
+          className="px-2 sm:px-0 w-full sm:basis-[calc(50%-0.9rem)] md:basis-[calc(33.333%-0.60rem)] lg:basis-[calc(25%-0.375rem)] h-full sm:h-[220px] transition-all duration-300"
         >
           <Card className="h-full flex flex-col bg-linear-to-br from-primary/20 via-primary/10 to-transparent border-2 border-primary/30 hover:border-primary/50 transition-all duration-300 p-2">
-            <CardHeader className="flex flex-col items-center gap-4 pb-0 pt-2">
+            <CardHeader className="flex flex-col items-center gap-2 pb-0 pt-2">
               <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
                 <Icon name={feature.icon} className="w-7 h-7 text-primary" />
               </div>
@@ -82,11 +82,11 @@ const FeatureSection = () => {
   return (
     <section
       id="features"
-      className="h-screen flex flex-col justify-center w-full bg-linear-to-b from-secondary/30 via-secondary/50 to-secondary/20 border-t border-border/50 relative overflow-hidden"
+      className="min-h-screen lg:h-screen flex flex-col justify-center w-full bg-linear-to-b from-secondary/30 via-secondary/50 to-secondary/20 border-t border-border/50 relative overflow-hidden"
     >
       {/* Subtle pattern overlay */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-size-[14px_24px] mask-[radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>
-      <div className="relative z-10">
+      <div className="relative z-10 py-12 lg:py-0">
         <SectionHeader
           title="Powerful Automation Features"
           subtitle="Everything you need to build, deploy, and manage intelligent automations."
